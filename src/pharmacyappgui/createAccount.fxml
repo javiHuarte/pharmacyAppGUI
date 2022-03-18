@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="pharmacyappgui.CreateAccountController">
+   <children>
+      <TextField fx:id="usernametext" layoutX="196.0" layoutY="101.0" promptText="Username" />
+      <PasswordField fx:id="password1text" layoutX="196.0" layoutY="147.0" promptText="Pasword" />
+      <PasswordField fx:id="password2test" layoutX="197.0" layoutY="200.0" promptText="Repeat Pasword" />
+      <Button fx:id="createButton" layoutX="504.0" layoutY="329.0" mnemonicParsing="false" onAction="#CreateAccount" text="Create" />
+   </children>
+</AnchorPane>

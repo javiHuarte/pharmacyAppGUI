@@ -16,5 +16,6 @@ public interface UserManager {
     public void newUser(User u);
     public User getUser(String email);
     public User checkPassword(String email, String password);
+    public boolean existingUserName(String username);
     
 }
