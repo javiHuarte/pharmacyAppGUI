@@ -8,9 +8,9 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/16" fx:controller="pharmacyappgui.CreateAccountController">
    <children>
-      <TextField fx:id="usernametext" layoutX="196.0" layoutY="101.0" promptText="Username" />
-      <PasswordField fx:id="password1text" layoutX="196.0" layoutY="147.0" promptText="Pasword" />
-      <PasswordField fx:id="password2test" layoutX="197.0" layoutY="200.0" promptText="Repeat Pasword" />
-      <Button fx:id="createButton" layoutX="504.0" layoutY="329.0" mnemonicParsing="false" onAction="#CreateAccount" text="Create" />
+      <TextField fx:id="username" layoutX="225.0" layoutY="98.0" promptText="Username" />
+      <PasswordField fx:id="password1" layoutX="226.0" layoutY="153.0" promptText="Password" />
+      <PasswordField fx:id="confirmPassword" layoutX="227.0" layoutY="223.0" promptText="Confirm password" />
+      <Button fx:id="createButton" layoutX="477.0" layoutY="321.0" mnemonicParsing="false" onAction="#createAccount" text="Button" />
    </children>
 </AnchorPane>

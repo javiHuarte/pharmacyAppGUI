@@ -16,14 +16,14 @@ import db.interfaces.UserManager;
  *
  * @author agarc
  */
-public class JPAUserManager {
+public class JPAUserManager implements UserManager{
     private EntityManager em;
     
     public JPAUserManager(){
         super();
         this.connect();
     }
-    
+    @Override
      public void connect() {
 	em = Persistence.createEntityManagerFactory("user-provider").createEntityManager();
 	em.getTransaction().begin();
@@ -31,11 +31,11 @@ public class JPAUserManager {
 	em.getTransaction().commit();
       }
      
-    
+    @Override
      public void disconnect() {
 		em.close();
 	}
-     
+     @Override
      public void newUser(User u){
          em.getTransaction().begin();
 	 em.persist(u);
@@ -47,8 +47,8 @@ public class JPAUserManager {
 	 q.setParameter(1, email);
 	 return (User) q.getSingleResult();
      }
-     
-     public boolean userNameTaken(String username ){
+     @Override
+     public boolean existingUserName(String username ){
          Query q = em.createNativeQuery("SELECT * FROM users WHERE email = ?", User.class);
 	 q.setParameter(1, username);
 	 List<User> userList= (List) q.getResultList();
@@ -59,7 +59,7 @@ public class JPAUserManager {
 		return true;
 	}
      }
-     
+     @Override
      public User checkPassword(String email, String password){
          Query q=null;
 		
@@ -81,17 +81,7 @@ public class JPAUserManager {
 	return (User) q.getSingleResult();
      }
      
-     public boolean existingUserName(String username){
-         Query q = em.createNativeQuery("SELECT * FROM users WHERE email = ? ", User.class);
-         q.setParameter(1, username);
-         List<User> userList = (List) q.getResultList();
-         if(userList.isEmpty()){
-             return false;
-         }
-         else{
-             return true;
-         }
-     }
+    
          
      }
      
